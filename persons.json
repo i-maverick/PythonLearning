@@ -1,0 +1,19 @@
+{
+	"persons" : [
+		{
+			"name": "Peter",
+			"age": 20,
+			"profession": "Artist"
+		},
+		{
+			"name": "Jack",
+			"age": 25,
+			"profession": "Postman"
+		},
+		{
+			"name": "Steve",
+			"age": 23,
+			"profession": "Policeman"
+		}
+	]
+}

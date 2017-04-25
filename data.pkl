@@ -1,0 +1,13 @@
+(dp0
+I1
+S'one'
+p1
+sI2
+(lp2
+S'two'
+p3
+aS'second'
+p4
+aS'duo'
+p5
+as.
