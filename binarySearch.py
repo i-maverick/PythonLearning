@@ -1,4 +1,4 @@
-def binSearch(lst, x):
+def binary_search(lst, x):
     l = 0
     r = len(lst)
     if r == 0:
@@ -18,4 +18,4 @@ str2 = ""
 str3 = "a"
 str4 = "ab"
 
-print(binSearch(str1, "g"))
+print(binary_search(str1, "g"))

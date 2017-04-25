@@ -1,4 +1,5 @@
-import banners
+import random
+import time
 
 
 class Movie:
@@ -34,7 +35,8 @@ class Catalogue:
         length = len(self.catalogue)
         if length == 0:
             return
-        num = banners.randint(0, length - 1)
+        random.seed(time.time())
+        num = random.randint(0, length - 1)
         keys = list(self.catalogue)
         return self.catalogue[keys[num]]
 

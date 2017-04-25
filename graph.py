@@ -64,21 +64,6 @@ def find_shortest_path(start, end, path=None):
     return shortest
 
 
-# def width_search(start, end, path=None):
-#     if not path:
-#         path = []
-#     path.append(start)
-#     while end not in path:
-#         for i in graph[start]:
-#             if i not in path:
-#                 width_search(i, end, path)
-
-# print find_path(1, 8)
-# for path in find_all_paths(1, 8):
-#     print path
-# print find_shortest_path(1, 8)
-#print width_search(1, 8)
-
 adj = [
     [1, 3],         #0
     [0, 3, 4, 5],   #1

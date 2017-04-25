@@ -1,4 +1,4 @@
-def bubbleSort(lst):
+def bubble_sort(lst):
     done = False
     n = len(lst) - 1
     while not done:
@@ -10,4 +10,4 @@ def bubbleSort(lst):
     return lst
 
 lst = [5, 3, 7, 2, 6, 4, 0, 9, 1, 8]
-print(bubbleSort(lst))
+print(bubble_sort(lst))

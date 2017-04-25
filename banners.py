@@ -1,15 +1,15 @@
 from random import randint
 
 
-def randomNums(nums):
-    while nums:
-        last = len(nums) - 1
+def random_nums(_nums):
+    while _nums:
+        last = len(_nums) - 1
         i = randint(0, last)
-        yield (nums[i])
+        yield (_nums[i])
         if i < last:
-            nums[i] = nums[last]
-        nums.pop()
+            _nums[i] = _nums[last]
+        _nums.pop()
 
-# nums = list(range(100))
-# for i in randomNums(nums):
-#     print(i)
+nums = list(xrange(100))
+for num in random_nums(nums):
+    print(num)

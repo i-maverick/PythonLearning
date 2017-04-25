@@ -4,7 +4,7 @@ import threading
 
 class Writer(threading.Thread):
     buffer = ""
-    lock = threading.Lock()
+    lock = threading.RLock()
 
     def __init__(self, num):
         threading.Thread.__init__(self)
@@ -18,9 +18,6 @@ class Writer(threading.Thread):
         Writer.lock.release()
 
 
-# lock = threading.Lock()
-
-buffer = ""
 for i in range(10):
     t = Writer(i)
     t.start()

@@ -51,7 +51,7 @@ def sortStack(s):
 
 s = simpleStack()
 st = list(range(-3, 5))
-for i in banners.randomNums(st):
+for i in banners.random_nums(st):
     s.push(i)
 print(s)
 sortStack(s)

@@ -1,8 +1,7 @@
 from collections import Counter
-import time
 
 
-def dictWord(word):
+def dict_word(word):
     d = {}
     for i in word:
         if i in d:
@@ -12,7 +11,7 @@ def dictWord(word):
     return d
 
 
-def isAnagram(first, second):
+def is_anagram(first, second):
     return Counter(first) == Counter(second)
 
 
@@ -25,18 +24,16 @@ groupAnagrams = ['сон', 'нос', 'сорт', 'трос', 'торт', 'рос
 # ['торт']
 # ]
 
-def dictAnagrams(group):
+def dict_anagrams(group):
     res = {}
     for word in group:
         key = frozenset(Counter(word).items())
         print(key)
-        if res.get(key) == None:
+        if key not in res:
             res[key] = []
         res[key].append(word)
     return res.values()
 
 
-t = time.time()
-print(isAnagram('earth', 'heart'))
-print(dictAnagrams(groupAnagrams))
-print("time:", time.time() - t)
+print(is_anagram('earth', 'heart'))
+print(dict_anagrams(groupAnagrams))

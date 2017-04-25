@@ -66,5 +66,5 @@ def calculate(exp):
     return stack[0]
 
 
-exp = "10 + (2*1.5 - 3) * 1.25"
+exp = "-2 + ((-4.5*8+10)/4+1.25)-21"  # -28.25
 print(calculate(exp))
