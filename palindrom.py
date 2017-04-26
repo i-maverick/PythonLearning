@@ -1,10 +1,9 @@
-import itertools
+from itertools import izip
 
 
 def is_palindrom(s):
     t = [x.lower() for x in s if x.isalnum()]  # additional string of len(t)
-    rev = reversed(t)
-    for x, y in itertools.izip(t, rev):
+    for x, y in zip(t, reversed(t)):
         if x != y:
             return False
     return True
@@ -13,10 +12,10 @@ def is_palindrom(s):
 def is_palindrom1(s):
     it = iter(s)
     it_rev = reversed(s)
-    for x,y in itertools.izip(it, it_rev):
-        while not str.isalnum(x):
+    for x,y in izip(it, it_rev):  # with itertools
+        while not x.isalnum():
             x = next(it)
-        while not str.isalnum(y):
+        while not y.isalnum():
             y = next(it_rev)
         if str.lower(x) != str.lower(y):
             return False
