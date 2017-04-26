@@ -3,11 +3,11 @@ def dijkstra_algo(graph, start):
     parents = {start: 0}
     for i in graph:
         for j in graph[i]:
-            if i in weight:
-                if j not in weight or graph[i][j] + weight[i] < weight[j]:
-                    weight[j] = graph[i][j] + weight[i]
-                    parents[j] = i
+            if j not in weight or graph[i][j] + weight[i] < weight[j]:
+                weight[j] = graph[i][j] + weight[i]
+                parents[j] = i
     return weight, parents
+
 
 g_wiki = {
     1: {2: 7, 3: 9, 6: 14},
