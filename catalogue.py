@@ -27,7 +27,7 @@ class Catalogue:
 
     def remove(self, movie):
         if movie.name() in self.catalogue:
-            self.catalogue.remove(movie.name())
+            del self.catalogue[movie.name()]
             return True
         return False
 

@@ -1,5 +1,5 @@
 def flatten(nested, flat=None):
-    if flat == None:
+    if not flat:
         flat = []
     for i in nested:
         if isinstance(i, list):
@@ -8,7 +8,5 @@ def flatten(nested, flat=None):
             flat.append(i)
     return flat
 
-
 nested = ["a", ["b", "c", ["d"], "e"]]
-print(flatten(nested))
 print(flatten(nested))

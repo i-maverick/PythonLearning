@@ -31,12 +31,12 @@ def shunting_yard(exp):
         if number:
             yield float(number) * sign
 
-    def popStack():
+    def pop_stack():
         while s:
-            i = s.pop()
-            if i == '(':
+            j = s.pop()
+            if j == '(':
                 return
-            res.append(i)
+            res.append(j)
 
     for i in parse(exp):
         if i in ops:
@@ -46,18 +46,18 @@ def shunting_yard(exp):
         elif i == '(':
             s.append(i)
         elif i == ')':
-            popStack()
+            pop_stack()
         else:
             res.append(i)
 
-    popStack()
+    pop_stack()
     return res
 
 
 def calculate(exp):
     stack = []
     for i in shunting_yard(exp):
-        if (i in ops):
+        if i in ops:
             y = stack.pop()
             x = stack.pop() if stack else 1
             stack.append(ops[i][1](x, y))
