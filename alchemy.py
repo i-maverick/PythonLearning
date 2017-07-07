@@ -41,5 +41,5 @@ if drivers.count() == 0:
     ])
     session.commit()
 
-for number, name in session.query(Driver.number, Driver.name).order_by(Driver.number):
-    print '{:>2} {}'.format(number, name)
+for d in session.query(Driver).order_by(Driver.number):
+    print '{:>2} {}'.format(d.number, d.name)
