@@ -1,60 +1,59 @@
-import time
 import banners
 
 
-class simpleStack:
-    def __init__(self, st=[]):
-        self.__stack = st
+class SimpleStack:
+    def __init__(self):
+        self.items = []
 
     def push(self, obj):
-        self.__stack.append(obj)
+        self.items.append(obj)
 
     def pop(self):
-        return self.__stack.pop()
+        return self.items.pop()
 
-    def top(self):
-        if (not self.empty()):
-            return self.__stack[-1]
+    def peek(self):
+        return self.items[-1]
 
     def empty(self):
-        return False if self.__stack else True
+        return self.items == []
 
     def __str__(self):
-        return str(self.__stack)
+        return str(self.items)
 
 
-def sortStack(s):
-    mid = s.top()
+def sort_stack(s):
+    mid = s.peek()
     print("mid:", mid)
 
-    left = simpleStack([])
-    right = simpleStack([])
-    leftCount = 0
-    rightCount = 0
+    left = SimpleStack()
+    right = SimpleStack()
+    left_count = 0
+    right_count = 0
     while not s.empty():
         i = s.pop()
         if i < mid:
             left.push(i)
-            leftCount += 1
+            left_count += 1
         else:
             right.push(i)
-            rightCount += 1
-    if leftCount == 1:
+            right_count += 1
+    if left_count == 1:
         s.push(left.pop())
-    elif leftCount > 1:
-        sortStack(left)
-    if rightCount == 1:
+    elif left_count > 1:
+        sort_stack(left)
+    if right_count == 1:
         s.push(right.pop())
-    elif rightCount > 1:
-        sortStack(right)
+    elif right_count > 1:
+        sort_stack(right)
 
 
-s = simpleStack()
+s = SimpleStack()
 st = list(range(-3, 5))
 for i in banners.random_nums(st):
     s.push(i)
 print(s)
-sortStack(s)
+sort_stack(s)
+print(s)
 # t = time.time()
 # while not s.empty():
 #     a = s.pop()

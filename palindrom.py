@@ -1,4 +1,4 @@
-from itertools import izip
+from itertools import zip
 
 
 def is_palindrom(s):
@@ -12,7 +12,7 @@ def is_palindrom(s):
 def is_palindrom1(s):
     it = iter(s)
     it_rev = reversed(s)
-    for x,y in izip(it, it_rev):  # with itertools
+    for x,y in zip(it, it_rev):  # with itertools
         while not x.isalnum():
             x = next(it)
         while not y.isalnum():
@@ -23,5 +23,5 @@ def is_palindrom1(s):
 
 
 s = 'A roza upala na lapu Azora!'
-print is_palindrom(s)
-print is_palindrom1(s)
+print(is_palindrom(s))
+print(is_palindrom1(s))

@@ -7,4 +7,4 @@ def qsort(lst):
         + qsort([x for x in lst if x > piv])
 
 lst = [54, 26, 93, 17, 77, 31, 44, 55, 20, 10, 22, 101, 546, -15, 23, 66, -55, -17, 0, 5, 223]
-print qsort(lst)
+print(qsort(lst))

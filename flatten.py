@@ -8,5 +8,14 @@ def flatten(nested, flat=None):
             flat.append(i)
     return flat
 
+def flat_list(array):
+    res = []
+    for i in array:
+        if isinstance(i, list):
+            res += flat_list(i)
+        else:
+            res.append(i)
+    return res
+
 nested = ["a", ["b", "c", ["d"], "e"]]
-print(flatten(nested))
+print(flat_list(nested))

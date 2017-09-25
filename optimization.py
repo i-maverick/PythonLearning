@@ -1,3 +1,5 @@
+from functools import reduce
+
 lst = [97, 98, 99, 100, 101, 102, 103, 104, 105, 106, 107, 108, 109, 110, 111, 112, 113, 114, 115, 116]
 
 def f1(list):
@@ -22,9 +24,9 @@ def f4(list):
         string = string + lchr(item)
     return string
 
-import string
-def f5(list):
-    return string.joinfields(map(chr, list), '')
+# import string
+# def f5(list):
+#     return string.joinfields(map(chr, list), '')
 
 def f6(list):
     return string.join(map(chr, list), '')
@@ -35,13 +37,13 @@ def f7(list):
 
 import time
 def timing(f, n, a):
-    print f.__name__,
+    print(f.__name__),
     r = range(n)
     t1 = time.clock()
     for i in r:
         f(a)
     t2 = time.clock()
-    print round(t2 - t1, 3)
+    print(round(t2 - t1, 3))
 
 timing(f1, 1000000, lst)
 timing(f2, 1000000, lst)

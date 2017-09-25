@@ -10,6 +10,6 @@ def random_nums(_nums):
             _nums[i] = _nums[last]
         _nums.pop()
 
-nums = list(xrange(100))
+nums = list(range(100))
 for num in random_nums(nums):
     print(num)

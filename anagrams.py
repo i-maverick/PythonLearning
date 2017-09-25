@@ -1,22 +1,44 @@
 from collections import Counter
+from collections import defaultdict
 
 
 def dict_word(word):
-    d = {}
+    d = defaultdict(int)
     for i in word:
-        if i in d:
-            d[i] += 1
-        else:
-            d[i] = 1
+        d[i] += 1
     return d
 
 
 def is_anagram(first, second):
+    return sorted(first) == sorted(second)
+
+
+def is_anagram_cnt(first, second):
     return Counter(first) == Counter(second)
 
 
-groupAnagrams = ['сон', 'нос', 'сорт', 'трос', 'торт', 'рост']
+def is_anagram_pass(s1, s2):
+    if len(s1) != len(s2):
+        return False
+    for a in s1:
+        if s1.count(a) != s2.count(a):
+            return False
+    return True
 
+
+def make_key(word):
+    return ''.join(sorted(word))
+
+
+def group_anagrams(group):
+    result = defaultdict(list)
+    for word in group:
+        result[make_key(word)].append(word)
+    for rec in result:
+        print(result[rec])
+
+
+groupAnagrams = ['сон', 'нос', 'сорт', 'трос', 'торт', 'рост', 'торот']
 
 # [
 # ['сон', 'нос'],
@@ -24,16 +46,6 @@ groupAnagrams = ['сон', 'нос', 'сорт', 'трос', 'торт', 'рос
 # ['торт']
 # ]
 
-def dict_anagrams(group):
-    res = {}
-    for word in group:
-        key = frozenset(Counter(word).items())
-        print(key)
-        if key not in res:
-            res[key] = []
-        res[key].append(word)
-    return res.values()
-
 
 print(is_anagram('earth', 'heart'))
-print(dict_anagrams(groupAnagrams))
+print(group_anagrams(groupAnagrams))

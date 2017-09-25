@@ -1,4 +1,3 @@
-import tornado.escape
 import tornado.gen
 import tornado.httpclient
 import tornado.ioloop
