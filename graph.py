@@ -72,15 +72,19 @@ adj = [
     [1, 2],         #4
     [1, 2, 3]       #5
 ]
-visited = set()
 
-def dfs(v):
+
+def dfs(v, visited = None):
+    if not visited:
+        visited = set()
     visited.add(v)
+    print('visit {}'.format(v))
     for vertex in adj[v]:
         if vertex not in visited:
-            dfs(vertex)
+            dfs(vertex, visited)
 
 level = [-1] * len(adj)
+
 
 def bfs(s):
     level[s] = 0
@@ -92,5 +96,5 @@ def bfs(s):
                 stack.append(w)
                 level[w] = level[v] + 1
 
-bfs(0)
-print(level[1])
+dfs(0)
+#print(level[1])

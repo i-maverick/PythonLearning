@@ -59,4 +59,4 @@ while a:
         m = m.next
     a = a.next
 
-print 'mid: {}'.format(m)
+print('mid: {}'.format(m))
