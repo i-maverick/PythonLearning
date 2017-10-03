@@ -9,6 +9,21 @@ def dijkstra_algo(graph, start):
     return weight, parents
 
 
+def dijkstra(graph, start):
+    weight = {start: 0}
+    parents = {start: 0}
+
+    queue = [start]
+    while queue:
+        i = queue.pop(0)
+        for j in graph[i]:
+            if j not in weight or graph[i][j] + weight[i] < weight[j]:
+                weight[j] = graph[i][j] + weight[i]
+                queue.append(j)
+                parents[j] = i
+    return weight, parents
+
+
 g_wiki = {
     1: {2: 7, 3: 9, 6: 14},
     2: {1: 7, 3: 10, 4: 15},
@@ -18,4 +33,4 @@ g_wiki = {
     6: {1: 14, 5: 9, 3: 2}
 }
 
-print dijkstra_algo(g_wiki, 1)
+print(dijkstra(g_wiki, 1))

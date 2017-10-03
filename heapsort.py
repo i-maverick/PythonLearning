@@ -6,7 +6,7 @@ def heap_sort(_lst):
     return [heapq.heappop(_lst) for _ in range(len(_lst))]
 
 lst = [54, 26, 93, 17, 77, 31, 44, 55, 20]
-print heap_sort(lst)
+print(heap_sort(lst))
 
 
 class PriorityQueue():
@@ -29,4 +29,4 @@ queue.insert((4, 'p'))
 queue.insert((3, 'a'))
 queue.insert((1, 'h'))
 
-print ''.join([queue.pop_min()[-1] for _ in range(len(queue))])
+print(''.join([queue.pop_min()[-1] for _ in range(len(queue))]))

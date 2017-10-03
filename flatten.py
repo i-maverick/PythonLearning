@@ -8,6 +8,7 @@ def flatten(nested, flat=None):
             flat.append(i)
     return flat
 
+
 def flat_list(array):
     res = []
     for i in array:
@@ -18,4 +19,5 @@ def flat_list(array):
     return res
 
 nested = ["a", ["b", "c", ["d"], "e"]]
+print(flatten(nested))
 print(flat_list(nested))

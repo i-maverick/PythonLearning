@@ -83,18 +83,19 @@ def dfs(v, visited = None):
         if vertex not in visited:
             dfs(vertex, visited)
 
-level = [-1] * len(adj)
-
 
 def bfs(s):
-    level[s] = 0
+    visited = {s: 0}
     stack = [s]
     while stack:
         v = stack.pop(0)
         for w in adj[v]:
-            if level[w] is -1:
+            if w not in visited:
                 stack.append(w)
-                level[w] = level[v] + 1
+                visited[w] = visited[v] + 1
+    return visited
+
 
 dfs(0)
-#print(level[1])
+levels = bfs(0)
+print(levels[1])

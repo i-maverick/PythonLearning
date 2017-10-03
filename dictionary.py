@@ -29,8 +29,8 @@ def get_state(tpl):
     return tpl[1]
 
 # city_list.sort(key = lambda x: x[1])
-for k,v in groupby(city_list, get_state):
-    print(k, [x[0] for x in v])
+# for k,v in groupby(city_list, get_state):
+#     print(k, [x[0] for x in v])
 
 lst = [-1, -2, -1, 10, 10, 10, -1, -1, -1, 10, -1, 10]
 
@@ -38,7 +38,7 @@ lst = [-1, -2, -1, 10, 10, 10, -1, -1, -1, 10, -1, 10]
 def group_ints(lst, key=0):
     return [list(g) for _, g in groupby(lst, lambda x: x < key)]
 
-print(group_ints(lst, 5))
-
-for _, g in groupby(sorted(lst), lambda x: x < 0):
-    print(list(g))
+# print(group_ints(lst, 5))
+#
+# for _, g in groupby(sorted(lst), lambda x: x < 0):
+#     print(list(g))
