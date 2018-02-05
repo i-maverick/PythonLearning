@@ -1,14 +1,14 @@
 def remove_zeros(a):
-    pos = None
-    for i, n in enumerate(a):
-        if n == 0 and pos is None:
-            pos = i
-        elif n != 0 and pos is not None:
-            a[pos], n = n, a[pos]
-            pos += 1
+    z = None
+    for i in range(len(a)):
+        if a[i] == 0 and z is None:
+            z = i
+        elif a[i] != 0 and z is not None:
+            a[z], a[i] = a[i], a[z]
+            z += 1
 
-    if pos is not None:
-        del a[pos:]
+    if z is not None:
+        del a[z:]
     return a
 
 
