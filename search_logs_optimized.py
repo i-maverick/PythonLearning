@@ -2,14 +2,16 @@ import glob
 import os
 
 
-# find_lines_with_id - search logs for lines with current identifier
-#
-# path: logs folder
-# mask: file template
-# id: identifier to find
-# lines_count: number of surrounded lines
-#
 def find_lines_with_id(path, mask, identifier, lines_count):
+    """
+    search logs for lines with current identifier
+
+    :param path: logs folder
+    :param mask: file template
+    :param identifier: identifier to find
+    :param lines_count: number of surrounded lines
+    """
+
     for file in glob.iglob(path + '/' + mask):
         if not os.path.isfile(file):
             continue
@@ -41,6 +43,7 @@ def find_lines_with_id(path, mask, identifier, lines_count):
             for num in founded_strings:
                 print('{0}:{1} {2}'.format(file, num, founded_strings[num]))
                 print('\n'.join(surrounded_lines[num]) + '\n')
+
 
 if __name__ == '__main__':
     find_lines_with_id('.', '*log', 4449, 5)
